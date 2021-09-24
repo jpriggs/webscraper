@@ -4,7 +4,7 @@ services:
         container_name: flask
         image: flask:latest
         build: .
-        command: gunicorn --bind 0.0.0.0:5000 manage:app
+        command: gunicorn --bind 0.0.0.0:5000 --reload manage:app
         volumes:
             - .:/app
         expose:
