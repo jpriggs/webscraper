@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+    flask:
+        container_name: flask
+        image: flask:latest
+        build: .
+        command: gunicorn --bind 0.0.0.0:5000 manage:app
+        volumes:
+            - .:/app
+        expose:
+            - 5000
+    nginx:
+        build: ./nginx
+        container_name: nginx
+        image: nginx:1.21.3-alpine
+        ports:
+            - 8080:80
+        depends_on:
+            - flask
