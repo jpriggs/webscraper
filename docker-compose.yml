@@ -1,0 +1,9 @@
+version: '3.9'
+services:
+    wikiscraper:
+        container_name: wikiscraper
+        image: wikiscraper:latest
+        build: .
+        command: watchmedo shell-command --patterns='*.py' --recursive --command='echo /app/src'
+        volumes:
+            - .:/app
