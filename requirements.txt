@@ -1,0 +1,8 @@
+--trusted-host pypi.org
+--trusted-host files.pythonhosted.org
+--trusted-host pypi.python.org
+
+beautifulsoup4==4.11.1
+pandas==1.4.2
+requests==2.27.1
+watchdog==2.1.7
