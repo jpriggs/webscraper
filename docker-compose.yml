@@ -4,6 +4,6 @@ services:
         container_name: webscraper
         image: webscraper:latest
         build: .
-        command: watchmedo auto-restart --recursive --patterns *.py --directory . --directory /pythontools -- python app.py'
         volumes:
-            - .:/app
+            - ./src:/app
+            - ./pythontools:/pythontools

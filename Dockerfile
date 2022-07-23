@@ -11,3 +11,7 @@ RUN pip install -r requirements.txt
 COPY ./pythontools /pythontools
 RUN pip install -e /pythontools
 COPY ./src /app
+
+ENTRYPOINT ["python", "app.py"]
+
+CMD tail -f /dev/null
